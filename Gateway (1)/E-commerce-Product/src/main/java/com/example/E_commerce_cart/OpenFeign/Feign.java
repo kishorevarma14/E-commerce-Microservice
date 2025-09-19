@@ -1,4 +1,4 @@
-package com.example.E_commerce_cart;
+package com.example.E_commerce_cart.OpenFeign;
 
 import com.example.E_commerce_cart.Product.ProductDto;
 import org.springframework.cloud.openfeign.FeignClient;

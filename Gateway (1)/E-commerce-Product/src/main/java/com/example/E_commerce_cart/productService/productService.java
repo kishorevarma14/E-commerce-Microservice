@@ -1,6 +1,6 @@
 package com.example.E_commerce_cart.productService;
 
-import com.example.E_commerce_cart.Feign;
+import com.example.E_commerce_cart.OpenFeign.Feign;
 import com.example.E_commerce_cart.Product.ProductDto;
 import com.example.E_commerce_cart.Product.product;
 import com.example.E_commerce_cart.Repository.ProductRepository;

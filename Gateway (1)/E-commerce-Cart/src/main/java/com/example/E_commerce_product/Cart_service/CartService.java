@@ -23,8 +23,6 @@ public class CartService {
     Feign feign;
     @Autowired
     HttpServletRequest Request;
-    @Autowired
-    JwtUsername jwtUsername;
     public String createcart(ProductDto productDto,String token) {
         Optional<Cart> existing=cartRepository.findByproductName(productDto.getProductName());
         if(existing.isPresent())
@@ -63,18 +61,5 @@ public class CartService {
         ProductDto details_for_payment = ProductDto.builder().productName(string.toString()).productPrice(amount).Quantity(1L).build();
         return feign.checkout(details_for_payment);
     }
-    public String getUsername(String token)
-    {
-        String header=token;
-        String jwt;
-        String username;
-        if(header!=null)
-        {
-            jwt=header.substring(7);
-            username=jwtUsername.extractUsername(jwt);
-            System.out.println(username);
-            return username;
-        }
-        return null;
     }
 }
